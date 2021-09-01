@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,42 +10,75 @@
     <script src="main.js" defer></script>
     <title>Web-A-Sketch</title>
 </head>
+
 <body>
+
+    <div class="helpScreen hidden" id="helpScreen">
+        <div class="helpFrame">
+            <div class="control horizontal">
+                <p class="title" style="margin-left: auto; padding-left: 50px;">Help</p>
+                <p class="helpText" style="margin-left: auto; cursor: pointer;" id="helpCloseButton">Close</p>
+            </div>
+            <p class="helpText"><b>Single Color:  </b>Change brush color to a custom picked color.  <i>Shortcut "1"</i></p>
+            <p class="helpText"><b>Random Color:  </b>The brush will paint each cell a random color.  <i>Shortcut "2"</i></p>
+            <p class="helpText"><b>Eraser:  </b>The brush will paint cells white.  <i>Shortcut "3"</i></p>
+            <p class="helpText"><b>Reset:  </b>Clears the canvas.</p>
+            <p class="helpText"><b>Save:  </b>Download your painting.</p>
+            <p class="helpText"><b>Grid:  </b>Show/Hide the grid.  <i>Shortcut "G"</i></p>
+            <p class="helpText"><b>Click Mode:  </b>Enables/Disables "Click Mode". 
+                In click mode, you can stop and resume painting with a mouse click. 
+                The canvas will have a dotted border while you are painting.  <i>Shortcut "C"</i></p>
+            <p class="helpText"><b>Size:  </b>Resizes the canvas to fit AxA cells.</p>
+            <p class="helpText"><b>Color Picker:  </b>Shows/Hides the color picker panel.  <i>Shortcut "P"</i></p>
+            <p class="helpText"><b>Color Dropper:  </b>Switches the current color to the selected cell's color.
+                  <i>Shortcut "D"</i></p>
+        </div>
+    </div>
+
     <div class="main">
-        <div class="controls">
-            <div class="control">
+        <div class="controlContainer">
+                <div class="control">
                 <div class="control horizontal">
-                    <input type="button" value="SINGLE COLOR" id="singleButton">
-                    <div class="colorPreview" id="colorPreview"></div>
+                    <input type="button" value="SINGLE COLOR" id="singleButton" class="mode">
+                    <div class="colorCheck" id="colorCheck"></div>
                 </div>
             </div>
             <div class="control">
-                <input type="button" value="RANDOM COLOR" id="rainbowButton">
+                <input type="button" value="RANDOM COLOR" id="rainbowButton" class="mode">
             </div>
             <div class="control">
-                <input type="button" value="ERASER" id="eraserButton">
+                <input type="button" value="ERASER" id="eraserButton" class="mode">
             </div>
             <div class="control">
                 <input type="button" value="RESET" id="resetButton">
             </div>
+            <div class="control">
+                <input type="button" value="SAVE" id="saveButton">
+            </div>
             <div class="control horizontal">
-                <label for="showGrid">Grid: </label>
-                <input type="checkbox" id="showGrid" name="showGrid" value="Show Grid">
-                <label for="clickMode">Click Mode: </label>
-                <input type="checkbox" id="clickMode" name="clickMode" value="Click Mode">
+                <label for="gridCheck">Grid: </label>
+                <input type="checkbox" id="gridCheck" name="gridCheck" value="Show Grid">
+                <label for="clickCheck">Click Mode: </label>
+                <input type="checkbox" id="clickCheck" name="clickCheck" value="Click Check">
             </div>
             <div class="control vertical">
-                <label for="pixelSlider" id="pixelLabel"></label>
-                <input type="range" min="2" max="100" value="16" class="slider" id="pixelSlider">
+                <label for="gridSizeRange" id="gridSizeLabel"></label>
+                <input type="range" min="2" max="100" value="16" class="slider" id="gridSizeRange">
             </div>
-            <label style="margin-top: 20px;"><a href="https://github.com/KazaKazan/etch-a-sketch">GitHub</a></label> 
+            <label style="margin-top: 20px;">
+                <a href="#" id="helpButton">Help</a>
+                |
+                <a href="https://github.com/KazaKazan/etch-a-sketch">GitHub</a>
+            </label> 
         </div>
+
         <div class="frame">
             <p class="title">Web-A-Sketch</p>
-            <div class="screen"></div>
+            <div class="screen" id="screen"></div>
         </div>
-        <div class="controls">
-            <div class="colorPicker hidden" id="colorPicker">
+
+        <div class="controlContainer">
+            <div class="colorPicker minimized" id="colorPicker">
                 <div class="colorFrame">
                     <div class="colorBlock"></div>
                     <div class="control vertical">
@@ -60,12 +94,17 @@
                         <input type="range" min="0" max="255" value="0" class="slider" id="blueSlider">
                     </div>
                     <div class="control horizontal">
-                        <label for="dropperTool">Color Dropper: </label>
-                        <input type="checkbox" id="dropperTool" name="dropperTool" value="Dropper Tool">
+                        <label for="dropperCheck">Color Dropper: </label>
+                        <input type="checkbox" id="dropperCheck" name="dropperCheck" value="Dropper Tool">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="hidden">
+        <canvas id="saveCanvas" width="450" height="450"></canvas>
+    </div>
 </body>
+
 </html>

@@ -12,140 +12,7 @@ html, body {
     background-color: var(--background);
 }
 
-/* MAIN CLASSES */
-
-.main {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.controls {
-    height: 100%;
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-right: 25px;
-    margin-left: 25px;
-}
-
-.colorPreview {
-    min-width: 22px;
-    height: 22px;
-    margin-left: 5px;
-    background-color: var(--current-color);
-    box-shadow: 5px 5px red;
-    border-style: solid;
-    border-width: 3px;
-}
-
-.colorPreview:hover {
-    border-color: white;
-}
-
-.colorPreview:active {
-    transform: scale(0.9);
-}
-
-.control {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    gap: 5px;
-}
-
-.about {
-    height: 100%;
-    width: 200px;
-    background-color: black;
-    margin-left: auto;
-}
-
-.frame {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 480px;
-    height: 530px;
-    background-color: black;
-    border-radius: 20px;
-    margin-top: 0px;
-    box-shadow: 10px 10px red;
-}
-
-.title {
-    color: white;
-    font-weight: bolder;
-    font-size: 30px;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 10px;
-    text-shadow: 1px 1px red, -1px -1px yellow;
-}
-
-.colorBlock {
-    width: 150px;
-    height: 150px;
-    background-color: var(--current-color);
-    box-shadow: 5px 5px red;
-    border-style: solid;
-    border-width: 3px;
-    border-color: white;
-}
-
-.screen {
-    width: 450px;
-    height: 450px;
-    display: grid;
-    background-color:black;
-    cursor: none;
-}
-
-.pixel {
-    background-color:white;
-}
-
-.pixel:hover {
-    border-style: solid;
-    border-width: 1px;
-    border-color: red;
-}
-
-.colorPicker {
-    border-style: solid;
-    border-width: 5px;
-    padding: 20px;
-    box-shadow: 5px 5px red;
-}
-
-/* MINI CLASSES */
-
-.dropperTool {
-    cursor: cell;
-}
-
-.vertical {
-    flex-direction: column;
-}
-
-.horizontal {
-    flex-direction: row;
-}
-
-.hidden {
-    display: none;
-}
-
 /* DEFAULT OVERRIDES */
-
 /* Buttons */
 input[type="button"] {
     -webkit-appearance: none;
@@ -225,6 +92,7 @@ label {
     padding: 0;
     font-family: serif;
     font-weight: bold;
+    user-select: none;
 }
 
 /* Checkboxes */
@@ -247,7 +115,6 @@ input[type="checkbox"]:hover {
 
 input[type="checkbox"]:checked {
     border-color: white;
-    background-color: yellow;
 }
 
 input[type="checkbox"]:active {
@@ -264,4 +131,189 @@ a:hover {
 
 a:visited {
     color:black;
+}
+
+/* MAIN CLASSES */
+
+.main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.controlContainer {
+    height: 100%;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+.colorCheck {
+    min-width: 22px;
+    height: 22px;
+    margin-left: 5px;
+    background-color: var(--current-color);
+    box-shadow: 5px 5px red;
+    border-style: solid;
+    border-width: 3px;
+}
+
+.colorCheck:hover {
+    border-color: white;
+}
+
+.colorCheck:active {
+    transform: scale(0.9);
+}
+
+.control {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 5px;
+}
+
+.about {
+    height: 100%;
+    width: 200px;
+    background-color: black;
+    margin-left: auto;
+}
+
+.frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 480px;
+    height: 530px;
+    background-color: black;
+    border-radius: 20px;
+    margin-top: 0px;
+    box-shadow: 10px 10px red;
+}
+
+.title {
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px red, -1px -1px yellow;
+    text-align: center;
+    user-select: none;
+}
+
+.colorBlock {
+    width: 150px;
+    height: 150px;
+    background-color: var(--current-color);
+    box-shadow: 5px 5px red;
+    border-style: solid;
+    border-width: 3px;
+    border-color: var(--main);
+}
+
+.screen {
+    width: 450px;
+    height: 450px;
+    display: grid;
+    background-color:black;
+    border-style: dotted;
+    border-width: 3px;
+    border-color:black;
+    cursor: crosshair;
+}
+
+.pixel {
+    background-color: white;
+}
+
+.pixel:hover {
+    border-style: solid;
+    border-width: 1px;
+    border-color: red;
+}
+
+.colorPicker {
+    border-style: solid;
+    border-width: 5px;
+    padding: 20px;
+    box-shadow: 5px 5px red;
+    transition: 0.1s;
+    transform: scale(1);
+    background-color: yellow;
+}
+
+.helpScreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.helpFrame {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 480px;
+    height: 530px;
+    background-color: black;
+    border-radius: 20px;
+    margin-top: 0px;
+    box-shadow: 10px 10px red;
+}
+
+.helpText {
+    color: white;
+    margin: 5px;
+    padding: 5px;
+    user-select: none;
+}
+
+/* MINI CLASSES */
+
+.dropperMode {
+    cursor: cell;
+}
+
+.vertical {
+    flex-direction: column;
+}
+
+.horizontal {
+    flex-direction: row;
+}
+
+.hidden {
+    display: none;
+}
+
+.minimized {
+    transform: scale(0);
+}
+
+.active {
+    border-color: white !important;
+}
+
+.drawing {
+    border-color: rgb(255, 255, 0);
+}
+
+.grid {
+    gap: 1px;
 }
