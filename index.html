@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <title>Web-A-Sketch</title>
+</head>
+<body>
+    <div class="main">
+        <div class="controls">
+            <div class="control">
+                <div class="control horizontal">
+                    <input type="button" value="SINGLE COLOR" id="singleButton">
+                    <div class="colorPreview" id="colorPreview"></div>
+                </div>
+            </div>
+            <div class="control">
+                <input type="button" value="RANDOM COLOR" id="rainbowButton">
+            </div>
+            <div class="control">
+                <input type="button" value="ERASER" id="eraserButton">
+            </div>
+            <div class="control">
+                <input type="button" value="RESET" id="resetButton">
+            </div>
+            <div class="control horizontal">
+                <label for="showGrid">Grid: </label>
+                <input type="checkbox" id="showGrid" name="showGrid" value="Show Grid">
+                <label for="clickMode">Click Mode: </label>
+                <input type="checkbox" id="clickMode" name="clickMode" value="Click Mode">
+            </div>
+            <div class="control vertical">
+                <label for="pixelSlider" id="pixelLabel"></label>
+                <input type="range" min="2" max="100" value="16" class="slider" id="pixelSlider">
+            </div>
+            <label style="margin-top: 20px;"><a href="https://github.com/KazaKazan/etch-a-sketch">GitHub</a></label> 
+        </div>
+        <div class="frame">
+            <p class="title">Web-A-Sketch</p>
+            <div class="screen"></div>
+        </div>
+        <div class="controls">
+            <div class="colorPicker hidden" id="colorPicker">
+                <div class="colorFrame">
+                    <div class="colorBlock"></div>
+                    <div class="control vertical">
+                        <label for="redSlider" id="redLabel">Red: 0</label>
+                        <input type="range" min="0" max="255" value="0" class="slider" id="redSlider">
+                    </div>
+                    <div class="control vertical">
+                        <label for="greenlider" id="greenLabel">Green: 0</label>
+                        <input type="range" min="0" max="255" value="0" class="slider" id="greenSlider">
+                    </div>
+                    <div class="control vertical">
+                        <label for="blueSlider" id="blueLabel">Blue: 0</label>
+                        <input type="range" min="0" max="255" value="0" class="slider" id="blueSlider">
+                    </div>
+                    <div class="control horizontal">
+                        <label for="dropperTool">Color Dropper: </label>
+                        <input type="checkbox" id="dropperTool" name="dropperTool" value="Dropper Tool">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

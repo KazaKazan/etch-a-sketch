@@ -1,0 +1,267 @@
+:root {
+    --background: yellow;
+    --main: black;
+    --current-color: rgb(0,0,0);
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+}
+
+/* MAIN CLASSES */
+
+.main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls {
+    height: 100%;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+.colorPreview {
+    min-width: 22px;
+    height: 22px;
+    margin-left: 5px;
+    background-color: var(--current-color);
+    box-shadow: 5px 5px red;
+    border-style: solid;
+    border-width: 3px;
+}
+
+.colorPreview:hover {
+    border-color: white;
+}
+
+.colorPreview:active {
+    transform: scale(0.9);
+}
+
+.control {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 5px;
+}
+
+.about {
+    height: 100%;
+    width: 200px;
+    background-color: black;
+    margin-left: auto;
+}
+
+.frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 480px;
+    height: 530px;
+    background-color: black;
+    border-radius: 20px;
+    margin-top: 0px;
+    box-shadow: 10px 10px red;
+}
+
+.title {
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px red, -1px -1px yellow;
+}
+
+.colorBlock {
+    width: 150px;
+    height: 150px;
+    background-color: var(--current-color);
+    box-shadow: 5px 5px red;
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+}
+
+.screen {
+    width: 450px;
+    height: 450px;
+    display: grid;
+    background-color:black;
+    cursor: none;
+}
+
+.pixel {
+    background-color:white;
+}
+
+.pixel:hover {
+    border-style: solid;
+    border-width: 1px;
+    border-color: red;
+}
+
+.colorPicker {
+    border-style: solid;
+    border-width: 5px;
+    padding: 20px;
+    box-shadow: 5px 5px red;
+}
+
+/* MINI CLASSES */
+
+.dropperTool {
+    cursor: cell;
+}
+
+.vertical {
+    flex-direction: column;
+}
+
+.horizontal {
+    flex-direction: row;
+}
+
+.hidden {
+    display: none;
+}
+
+/* DEFAULT OVERRIDES */
+
+/* Buttons */
+input[type="button"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    border-style: solid;
+    background-color: var(--main);
+    border-color: var(--main);
+    border-width: 3px;
+    box-shadow: 5px 5px red;
+    color: white;
+    font-weight: bolder;
+    font-family: serif;
+    font-size: 15px;
+}
+
+input[type="button"]:hover {
+    border-color: white;
+}
+
+input[type="button"]:active {
+    transform: scale(0.9);
+}
+
+/* Sliders */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    background-color: var(--main);
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+} 
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: var(--main);
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+    border-radius: 0;
+    cursor: pointer;
+    box-shadow: 3px 3px red;
+}
+
+input[type="range"]::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: var(--main);
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+    border-radius: 0;
+    cursor: pointer;
+    box-shadow: 3px 3px red;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+    border-color: white;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    border-color: white;
+}
+
+/* Labels */
+
+label {
+    margin: 0;
+    padding: 0;
+    font-family: serif;
+    font-weight: bold;
+}
+
+/* Checkboxes */
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: var(--main);
+    background-color: var(--main);
+    box-shadow: 3px 3px red;
+}
+
+input[type="checkbox"]:hover {
+    border-color: white;
+}
+
+input[type="checkbox"]:checked {
+    border-color: white;
+    background-color: yellow;
+}
+
+input[type="checkbox"]:active {
+    transform: scale(0.9);
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color:black;
+}
